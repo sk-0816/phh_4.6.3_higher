@@ -1,12 +1,13 @@
-// 高階関数
-function myHigheFunction(func){
-    console.log('myFunction');
-
-    func();
-}
-//(普通の)関数
-function outsideFunction (){
-    console.log('outsideFunction');
+function arrayWalk(data,f){
+    for(let key in data){
+        f(data[key],key);
+    }
 }
 
-myHigherFunction(outsideFunction);
+function showElement(value,key){
+    console.log(key+':'+value);
+}
+
+let ary = [1,2,4,8,16];
+// arrayWalk(ary,showElement);
+ary.forEarch(showElement);
